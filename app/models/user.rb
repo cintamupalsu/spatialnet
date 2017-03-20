@@ -66,6 +66,7 @@ class User < ActiveRecord::Base
     def password_reset_expired?
         reset_send_at < 2.hours.ago
     end
+    
     private
         #Convert email to lowercase
         def downcase_email
