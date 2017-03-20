@@ -1,0 +1,2 @@
+module OsmsHelper
+end

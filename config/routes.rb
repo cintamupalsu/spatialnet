@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'osms/new'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' 
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  
+  get    'osmNew'  => 'osms#new'
 
   resources :users
   resources :account_activations, only: [:edit]
