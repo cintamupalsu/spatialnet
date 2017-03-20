@@ -20,10 +20,13 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome"
-      
-      redirect_to @user
+      #UserMailer.account_activation(@user).deliver_now
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
+      #log_in @user
+      #flash[:success] = "Welcome"
+      #redirect_to @user
     else
       render 'new'
     end
@@ -41,6 +44,12 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
   
   private
