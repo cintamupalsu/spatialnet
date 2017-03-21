@@ -1,2 +1,11 @@
-<h1>Osms#new</h1>
-<p>Find me in app/views/osms/new.html.erb</p>
+<% provide(:title, 'Mixing Matrix') %>
+<h1>Mixing Matrix</h1>
+
+<div class ="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form>
+            <label for="fileosm">Upload OpenStreetMap file (*.osm)</label>
+            <input type="file"  accept=".osm" id="fileosm" name="fileosm" class="form-control"/>
+        </form>
+    </div>
+</div>
