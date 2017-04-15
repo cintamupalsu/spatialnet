@@ -1,0 +1,12 @@
+<div class="center jumbotron">
+	<div class="col-xs-4">
+	<table>
+		<tr>
+			<%= form_for :upload, url: osmProceed_path do |f| %>
+				<%= f.file_field :fileOSM %>
+				<%= f.submit :アップロード%>
+			<% end %>
+		</tr>
+	</table>
+	</div>
+</div>
