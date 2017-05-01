@@ -54,20 +54,23 @@ class ClsOSMLL
       if d1Line.first=="</way>" && waymode
         waymode=false
         if tag[tagString]!=nil; way,uidcheck=decway(waystack, c_waystack, way, uidcheck) end
-        
       end
-      
-      
     end
     
     fOSM.close()   
     
     uid={}
     uid=getuid(uidcheck,lat)
+    finalway={}
+    (1..way.count).each do |i|
+      d1line=way[i].split(' ')
+      finalway[i]="#{uid.key(d1line[0].to_i)} #{uid.key(d1line[1].to_i)}"
+    end
+ 
     lbl={}
     lbl=getlbl(way,uid)
     uid=combineUid(uid,lat,lon)
-    return lbl,uid
+    return lbl,uid,finalway
     
   end
   
@@ -108,7 +111,6 @@ class ClsOSMLL
         if i>1
           way_c+=1
           way[way_c]="#{waystack[i-1]} #{waystack[i]}"
-          
         end
       end
       
