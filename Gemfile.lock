@@ -140,7 +140,6 @@ GEM
     mini_backtrace (0.1.3)
       minitest (> 1.2.0)
       rails (>= 2.3.3)
-    mini_magick (4.7.0)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     minitest-reporters (1.0.5)
@@ -167,8 +166,6 @@ GEM
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -206,12 +203,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
-    refile (0.5.3)
-      mime-types
-      sinatra (~> 1.4.5)
-    refile-mini_magick (0.2.0)
-      mini_magick (~> 4.0)
-      refile (~> 0.5)
     representable (3.0.3)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -244,10 +235,6 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
-    sinatra (1.4.8)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
     slop (3.6.0)
     spring (1.1.3)
     sprockets (3.7.0)
@@ -298,8 +285,6 @@ DEPENDENCIES
   puma (= 2.11.1)
   rails (= 4.2.5)
   rails_12factor (= 0.0.2)
-  refile
-  refile-mini_magick
   rspec
   rubyzip
   sass-rails (~> 5.0)

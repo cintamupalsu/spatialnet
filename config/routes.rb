@@ -20,9 +20,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  get    'osmNew'    => 'osms#new'
-  get    'osmUpload' => 'osms#osmUpload'
-  post   'osmProceed'=> 'osms#osmProceed'
+  get    'osmNew'  => 'osms#new'
+  get    'osmUpload' => 'osms#fileUpload'
 
   resources :users
   resources :account_activations, only: [:edit]
