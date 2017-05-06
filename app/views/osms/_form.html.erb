@@ -1,0 +1,41 @@
+<%= form_for(@osm) do |f| %>
+  <% if @osm.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@osm.errors.count, "error") %> prohibited this osm from being saved:</h2>
+
+      <ul>
+      <% @osm.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :custom01 %><br>
+    <%= f.text_area :custom01 %>
+  </div>
+  <div class="field">
+    <%= f.label :custom02 %><br>
+    <%= f.text_area :custom02 %>
+  </div>
+  <div class="field">
+    <%= f.label :custom03 %><br>
+    <%= f.text_area :custom03 %>
+  </div>
+  <div class="field">
+    <%= f.label :custom04 %><br>
+    <%= f.text_field :custom04 %>
+  </div>
+  <div class="field">
+    <%= f.label :custom05 %><br>
+    <%= f.text_field :custom05 %>
+  </div>
+  <div class="field">
+    <%= f.label :custom06 %><br>
+    <%= f.text_field :custom06 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

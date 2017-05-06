@@ -1,0 +1,1 @@
+json.partial! "osms/osm", osm: @osm

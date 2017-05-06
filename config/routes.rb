@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :osms
   get 'osms/new'
 
   get 'password_resets/new'
@@ -19,9 +20,6 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' 
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  
-  get    'osmNew'  => 'osms#new'
-  get    'osmUpload' => 'osms#fileUpload'
 
   resources :users
   resources :account_activations, only: [:edit]

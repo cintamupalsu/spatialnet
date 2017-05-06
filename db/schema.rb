@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320055629) do
+ActiveRecord::Schema.define(version: 20170505014938) do
+
+  create_table "osms", force: :cascade do |t|
+    t.text     "custom01"
+    t.text     "custom02"
+    t.text     "custom03"
+    t.string   "custom04"
+    t.string   "custom05"
+    t.string   "custom06"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

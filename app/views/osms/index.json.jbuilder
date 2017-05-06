@@ -1,0 +1,1 @@
+json.array! @osms, partial: 'osms/osm', as: :osm

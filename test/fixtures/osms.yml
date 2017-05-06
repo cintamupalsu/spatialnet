@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  custom01: MyText
+  custom02: MyText
+  custom03: MyText
+  custom04: MyString
+  custom05: MyString
+  custom06: MyString
+
+two:
+  custom01: MyText
+  custom02: MyText
+  custom03: MyText
+  custom04: MyString
+  custom05: MyString
+  custom06: MyString

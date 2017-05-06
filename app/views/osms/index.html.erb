@@ -1,0 +1,103 @@
+<% provide(:title,'Mixing Matrix')%>
+
+<h1>Mixing Matrix</h1>
+<div class=row>
+	<div class="col-md-6 col-md-offset-3">
+		<table>
+			<tr>
+				<td>Select a file to load:</td>
+			</tr>
+			<tr>
+				<td><input type="file" id="fileToLoad"></td>
+			</td>
+			<tr>
+				<td><button onclick="loadFileAsText()">Process</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+	</div>
+</div>
+
+<div id="seetemp"></div>
+
+<script type="text/javascript">
+	function loadFileAsText(){
+		var fileToLoad = document.getElementById("fileToLoad").files[0];
+		var reader = new FileReader();
+	
+		reader.onload = function(progressEvent){
+			var lines = this.result.split('\n');
+			var area; //1 = node 2 = way 0 = default
+			var testword="";
+			for (var line=0; line<lines.length; line++){
+				var d1line = lines[line].split(' ');
+				//document.getElementById("seetemp").innerHTML += d1line[0];
+				if (line==3) testword+=d1line[0];
+				if (d1line[0].trim()=="<node"){
+					area=1;
+					testword+=line;
+				}
+				if (area==1){
+					//document.getElementById("seetemp").innerHTML += d1line[0];
+				}
+			//	document.getElementById("inputTextToSave2").innerHTML = lines[1];
+				
+			}
+		
+		//sending file to browser
+			
+			var file = new Blob([testword],{type: "txt"});
+			if(window.navigator.msSaveOrOpenBlob){
+				window.navigator.msSaveOrOpenBlop(file,"lbl.txt");
+			} else {
+				var a = document.createElement("a"), url = URL.createObjectURL(file);
+				a.href = url;
+				document.body.appendChild(a);
+				a.click();
+				setTimeout(function(){
+					document.body.removeChild(a);
+					window.URL.revokeObjectURL(url);
+				},0);
+			}
+		}
+			
+		reader.readAsText(fileToLoad);
+	}
+</script>
+
+<!-- >
+<table>
+  <thead>
+    <tr>
+      <th>Custom01</th>
+      <th>Custom02</th>
+      <th>Custom03</th>
+      <th>Custom04</th>
+      <th>Custom05</th>
+      <th>Custom06</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @osms.each do |osm| %>
+      <tr>
+        <td><%= osm.custom01 %></td>
+        <td><%= osm.custom02 %></td>
+        <td><%= osm.custom03 %></td>
+        <td><%= osm.custom04 %></td>
+        <td><%= osm.custom05 %></td>
+        <td><%= osm.custom06 %></td>
+        <td><%= link_to 'Show', osm %></td>
+        <td><%= link_to 'Edit', edit_osm_path(osm) %></td>
+        <td><%= link_to 'Destroy', osm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Osm', new_osm_path %>
+-->
